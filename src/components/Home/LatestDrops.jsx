@@ -1,84 +1,3 @@
-// // import React from "react";
-// // import ProductCard from "../UI/ProductCard";
-
-// // const products = [
-// //   {
-// //     id: 1,
-// //     name: "AKIRA TACTICAL HOODIE",
-// //     price: "140",
-// //     image:
-// //       "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop",
-// //   },
-// //   {
-// //     id: 2,
-// //     name: "EVA-01 OVERSIZED TEE",
-// //     price: "85",
-// //     image:
-// //       "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop",
-// //   },
-// //   {
-// //     id: 3,
-// //     name: "NEO-TOKYO SWEAT PANTS",
-// //     price: "120",
-// //     image:
-// //       "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?q=80&w=800&auto=format&fit=crop",
-// //   },
-// //   {
-// //     id: 4,
-// //     name: "CYBER MASK OVERSIZED TEE",
-// //     price: "75",
-// //     image:
-// //       "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop",
-// //   },
-// // ];
-
-// // const LatestDrops = () => {
-// //   return (
-// //     <section
-// //       style={{ padding: "80px 40px", maxWidth: "1400px", margin: "0 auto" }}
-// //     >
-// //       <p
-// //         style={{
-// //           color: "var(--color-primary)",
-// //           fontSize: "0.85rem",
-// //           fontWeight: "800",
-// //           letterSpacing: "3px",
-// //           textTransform: "uppercase",
-// //           marginBottom: "8px",
-// //         }}
-// //       >
-// //         // NEW ARRIVALS
-// //       </p>
-// //       <h3
-// //         style={{
-// //           fontSize: "2.2rem",
-// //           textTransform: "uppercase",
-// //           fontWeight: "900",
-// //           marginBottom: "40px",
-// //           letterSpacing: "1px",
-// //           borderLeft: "4px solid var(--color-primary)",
-// //           paddingLeft: "15px",
-// //         }}
-// //       >
-// //         LATEST DROPS
-// //       </h3>
-// //       <div
-// //         style={{
-// //           display: "grid",
-// //           gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-// //           gap: "30px",
-// //         }}
-// //       >
-// //         {products.map((p) => (
-// //           <ProductCard key={p.id} product={p} />
-// //         ))}
-// //       </div>
-// //     </section>
-// //   );
-// // };
-
-// // export default LatestDrops;
-
 // import React from "react";
 // import ProductCard from "../UI/ProductCard";
 
@@ -139,7 +58,6 @@
 //     <section
 //       style={{ padding: "80px 40px", maxWidth: "1400px", margin: "0 auto" }}
 //     >
-//       {/* Header Section with Left Title and Right View All Button */}
 //       <div
 //         style={{
 //           display: "flex",
@@ -177,7 +95,6 @@
 //           </h3>
 //         </div>
 
-//         {/* View All Button */}
 //         <button
 //           onClick={onViewAll}
 //           style={{
@@ -201,11 +118,10 @@
 //             e.target.style.borderColor = "rgba(255, 255, 255, 0.3)";
 //           }}
 //         >
-//           VIEW ALL DROPS →
+//           VIEW ALL →
 //         </button>
 //       </div>
 
-//       {/* Grid Display */}
 //       <div
 //         style={{
 //           display: "grid",
@@ -343,7 +259,7 @@ const LatestDrops = ({ onViewAll }) => {
             e.target.style.borderColor = "rgba(255, 255, 255, 0.3)";
           }}
         >
-          VIEW ALL DROPS →
+          VIEW ALL →
         </button>
       </div>
 
