@@ -1,0 +1,78 @@
+:root {
+  --color-primary: #dc2626; /* High-contrast Anime Red */
+  --color-primary-dark: #991b1b; /* Deep Crimson */
+  --color-bg-dark: #09090b; /* Pure Dark Background */
+  --color-bg-card: #18181b; /* Dark Graphite Card Background */
+  --color-text-main: #f4f4f5; /* Soft White Text */
+  --color-text-muted: #a1a1aa; /* Muted Slate Text */
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Custom Red Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Sticky Cards for Sale Section */
+.sticky-card {
+  position: sticky;
+  top: 100px;
+  height: 80vh;
+  width: 100%;
+  margin-bottom: 5vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
