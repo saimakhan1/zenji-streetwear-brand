@@ -1,296 +1,3 @@
-// import React from "react";
-
-// const Footer = () => {
-//   return (
-//     <footer
-//       style={{
-//         backgroundColor: "#09090b",
-//         color: "#a1a1aa",
-//         borderTop: "1px solid rgba(255,255,255,0.08)",
-//         paddingTop: "70px",
-//         paddingBottom: "30px",
-//       }}
-//     >
-//       <div
-//         style={{
-//           maxWidth: "1400px",
-//           margin: "0 auto",
-//           padding: "0 40px",
-//           display: "grid",
-//           gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-//           gap: "40px",
-//           marginBottom: "50px",
-//         }}
-//       >
-//         {/* Column 1: Brand Info */}
-//         <div>
-//           <h2
-//             style={{
-//               color: "#fff",
-//               fontSize: "1.8rem",
-//               fontWeight: "900",
-//               letterSpacing: "2px",
-//               marginBottom: "16px",
-//             }}
-//           >
-//             ZENJI<span style={{ color: "var(--color-primary)" }}>.</span>
-//           </h2>
-//           <p
-//             style={{
-//               fontSize: "0.88rem",
-//               lineHeight: "1.6",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             High-end anime-inspired streetwear tailored for modest, modern
-//             oversized culture.
-//           </p>
-//           <div style={{ display: "flex", gap: "15px", color: "#fff" }}>
-//             {["INSTAGRAM", "DISCORD", "TWITTER"].map((social) => (
-//               <a
-//                 key={social}
-//                 href="#"
-//                 style={{
-//                   color: "#a1a1aa",
-//                   fontSize: "0.75rem",
-//                   fontWeight: "800",
-//                   textDecoration: "none",
-//                   letterSpacing: "1px",
-//                   transition: "color 0.2s",
-//                 }}
-//                 onMouseEnter={(e) =>
-//                   (e.target.style.color = "var(--color-primary)")
-//                 }
-//                 onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
-//               >
-//                 {social}
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Column 2: Quick Links */}
-//         <div>
-//           <h4
-//             style={{
-//               color: "#fff",
-//               fontSize: "0.95rem",
-//               fontWeight: "800",
-//               letterSpacing: "2px",
-//               textTransform: "uppercase",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             NAVIGATION
-//           </h4>
-//           <ul
-//             style={{
-//               listStyle: "none",
-//               padding: 0,
-//               margin: 0,
-//               display: "flex",
-//               flexDirection: "column",
-//               gap: "10px",
-//             }}
-//           >
-//             {[
-//               "NEW DROPS",
-//               "COLLECTIONS",
-//               "LOOKBOOK",
-//               "OUR STORY",
-//               "ARCHIVE",
-//             ].map((item) => (
-//               <li key={item}>
-//                 <a
-//                   href="#"
-//                   style={{
-//                     color: "#a1a1aa",
-//                     textDecoration: "none",
-//                     fontSize: "0.88rem",
-//                     transition: "color 0.2s",
-//                   }}
-//                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
-//                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
-//                 >
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Column 3: Help & Support */}
-//         <div>
-//           <h4
-//             style={{
-//               color: "#fff",
-//               fontSize: "0.95rem",
-//               fontWeight: "800",
-//               letterSpacing: "2px",
-//               textTransform: "uppercase",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             CUSTOMER HELP
-//           </h4>
-//           <ul
-//             style={{
-//               listStyle: "none",
-//               padding: 0,
-//               margin: 0,
-//               display: "flex",
-//               flexDirection: "column",
-//               gap: "10px",
-//             }}
-//           >
-//             {[
-//               "ORDER TRACKING",
-//               "SHIPPING POLICY",
-//               "RETURNS & EXCHANGES",
-//               "SIZE GUIDE",
-//               "FAQ & CONTACT",
-//             ].map((item) => (
-//               <li key={item}>
-//                 <a
-//                   href="#"
-//                   style={{
-//                     color: "#a1a1aa",
-//                     textDecoration: "none",
-//                     fontSize: "0.88rem",
-//                     transition: "color 0.2s",
-//                   }}
-//                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
-//                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
-//                 >
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Column 4: Legal Information */}
-//         <div>
-//           <h4
-//             style={{
-//               color: "#fff",
-//               fontSize: "0.95rem",
-//               fontWeight: "800",
-//               letterSpacing: "2px",
-//               textTransform: "uppercase",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             LEGAL
-//           </h4>
-//           <ul
-//             style={{
-//               listStyle: "none",
-//               padding: 0,
-//               margin: 0,
-//               display: "flex",
-//               flexDirection: "column",
-//               gap: "10px",
-//             }}
-//           >
-//             {[
-//               "TERMS OF SERVICE",
-//               "PRIVACY POLICY",
-//               "COOKIE PREFERENCES",
-//               "REFUND POLICY",
-//             ].map((item) => (
-//               <li key={item}>
-//                 <a
-//                   href="#"
-//                   style={{
-//                     color: "#a1a1aa",
-//                     textDecoration: "none",
-//                     fontSize: "0.88rem",
-//                     transition: "color 0.2s",
-//                   }}
-//                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
-//                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
-//                 >
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Column 5: Newsletter */}
-//         <div>
-//           <h4
-//             style={{
-//               color: "#fff",
-//               fontSize: "0.95rem",
-//               fontWeight: "800",
-//               letterSpacing: "2px",
-//               textTransform: "uppercase",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             JOIN THE CLUB
-//           </h4>
-//           <p style={{ fontSize: "0.85rem", marginBottom: "15px" }}>
-//             Subscribe to get secret drop links before launch.
-//           </p>
-//           <form
-//             onSubmit={(e) => e.preventDefault()}
-//             style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-//           >
-//             <input
-//               type="email"
-//               placeholder="ENTER YOUR EMAIL"
-//               style={{
-//                 backgroundColor: "#18181b",
-//                 border: "1px solid rgba(255,255,255,0.15)",
-//                 padding: "12px 14px",
-//                 color: "#fff",
-//                 borderRadius: "4px",
-//                 outline: "none",
-//                 fontSize: "0.85rem",
-//               }}
-//             />
-//             <button
-//               type="submit"
-//               style={{
-//                 backgroundColor: "var(--color-primary)",
-//                 color: "#fff",
-//                 border: "none",
-//                 padding: "12px",
-//                 fontWeight: "800",
-//                 letterSpacing: "2px",
-//                 textTransform: "uppercase",
-//                 cursor: "pointer",
-//                 borderRadius: "4px",
-//                 fontSize: "0.8rem",
-//               }}
-//             >
-//               SUBSCRIBE
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-
-//       {/* Copyright Line */}
-//       <div
-//         style={{
-//           borderTop: "1px solid rgba(255,255,255,0.05)",
-//           paddingTop: "25px",
-//           textAlign: "center",
-//           fontSize: "0.8rem",
-//           color: "#71717a",
-//         }}
-//       >
-//         © {new Date().getFullYear()} ZENJI.SHOP — ALL RIGHTS RESERVED.
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
 import React from "react";
 
 // Social Media Icons (Inline SVGs)
@@ -312,12 +19,11 @@ const FacebookIcon = () => (
   </svg>
 );
 
-// Custom Brand Styling Definition
 const socialLinks = [
   {
     name: "Instagram",
     icon: <InstagramIcon />,
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/zenji_.shop?igsh=a3ppYnA3YnJqMHk%3D",
     background:
       "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
     color: "#ffffff",
@@ -325,20 +31,27 @@ const socialLinks = [
   {
     name: "TikTok",
     icon: <TikTokIcon />,
-    url: "https://tiktok.com",
+    url: "https://www.tiktok.com/@zenji_.shop",
     background: "#ffffff",
     color: "#000000",
   },
   {
     name: "Facebook",
     icon: <FacebookIcon />,
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/people/ZENJI/61592433253702/",
     background: "#1877F2",
     color: "#ffffff",
   },
 ];
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
+  const handleLinkClick = (e, pageKey) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate(pageKey);
+    }
+  };
+
   return (
     <footer
       style={{
@@ -360,20 +73,26 @@ const Footer = () => {
           marginBottom: "50px",
         }}
       >
-        {/* Column 1: Brand Info & Themed Social Buttons */}
+        {/* Column 1: Brand Info & Social Badges */}
         <div>
-          <h2
-            style={{
-              color: "#fff",
-              fontSize: "1.8rem",
-              fontWeight: "900",
-              letterSpacing: "2px",
-              marginBottom: "16px",
-            }}
+          <a
+            href="#home"
+            onClick={(e) => handleLinkClick(e, "HOME")}
+            style={{ textDecoration: "none" }}
           >
-            ZENJI
-            <span style={{ color: "var(--color-primary, #e63946)" }}>.</span>
-          </h2>
+            <h2
+              style={{
+                color: "#fff",
+                fontSize: "1.8rem",
+                fontWeight: "900",
+                letterSpacing: "2px",
+                marginBottom: "16px",
+              }}
+            >
+              ZENJI
+              <span style={{ color: "var(--color-primary, #e63946)" }}>.</span>
+            </h2>
+          </a>
           <p
             style={{
               fontSize: "0.88rem",
@@ -385,7 +104,6 @@ const Footer = () => {
             oversized culture.
           </p>
 
-          {/* Styled Social Badges */}
           <div style={{ display: "flex", gap: "12px" }}>
             {socialLinks.map((social) => (
               <a
@@ -426,7 +144,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Column 2: Quick Links */}
+        {/* Column 2: Navigation (ARCHIVE বাদ দেওয়া হয়েছে) */}
         <div>
           <h4
             style={{
@@ -451,15 +169,15 @@ const Footer = () => {
             }}
           >
             {[
-              "NEW DROPS",
-              "COLLECTIONS",
-              "LOOKBOOK",
-              "OUR STORY",
-              "ARCHIVE",
+              { label: "NEW DROPS", key: "DROP" },
+              { label: "COLLECTIONS", key: "COLLECTION" },
+              { label: "LOOKBOOK", key: "LOOKBOOK" },
+              { label: "OUR STORY", key: "OUR STORY" },
             ].map((item) => (
-              <li key={item}>
+              <li key={item.label}>
                 <a
-                  href="#"
+                  href={`#${item.key.toLowerCase()}`}
+                  onClick={(e) => handleLinkClick(e, item.key)}
                   style={{
                     color: "#a1a1aa",
                     textDecoration: "none",
@@ -469,14 +187,14 @@ const Footer = () => {
                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Column 3: Help & Support */}
+        {/* Column 3: Customer Help (আলাদা পেজ Key যুক্ত করা হয়েছে) */}
         <div>
           <h4
             style={{
@@ -501,15 +219,16 @@ const Footer = () => {
             }}
           >
             {[
-              "ORDER TRACKING",
-              "SHIPPING POLICY",
-              "RETURNS & EXCHANGES",
-              "SIZE GUIDE",
-              "FAQ & CONTACT",
+              { label: "ORDER TRACKING", key: "LOGIN" },
+              { label: "SHIPPING POLICY", key: "SHIPPING_POLICY" },
+              { label: "RETURNS & EXCHANGES", key: "RETURNS" },
+              { label: "SIZE GUIDE", key: "SIZE_GUIDE" },
+              { label: "FAQ & CONTACT", key: "FAQ" },
             ].map((item) => (
-              <li key={item}>
+              <li key={item.label}>
                 <a
-                  href="#"
+                  href={`#${item.key.toLowerCase()}`}
+                  onClick={(e) => handleLinkClick(e, item.key)}
                   style={{
                     color: "#a1a1aa",
                     textDecoration: "none",
@@ -519,14 +238,14 @@ const Footer = () => {
                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Column 4: Legal Information */}
+        {/* Column 4: Legal (আলাদা পেজ Key যুক্ত করা হয়েছে) */}
         <div>
           <h4
             style={{
@@ -551,14 +270,15 @@ const Footer = () => {
             }}
           >
             {[
-              "TERMS OF SERVICE",
-              "PRIVACY POLICY",
-              "COOKIE PREFERENCES",
-              "REFUND POLICY",
+              { label: "TERMS OF SERVICE", key: "TERMS" },
+              { label: "PRIVACY POLICY", key: "PRIVACY" },
+              { label: "COOKIE PREFERENCES", key: "COOKIES" },
+              { label: "REFUND POLICY", key: "REFUND" },
             ].map((item) => (
-              <li key={item}>
+              <li key={item.label}>
                 <a
-                  href="#"
+                  href={`#${item.key.toLowerCase()}`}
+                  onClick={(e) => handleLinkClick(e, item.key)}
                   style={{
                     color: "#a1a1aa",
                     textDecoration: "none",
@@ -568,7 +288,7 @@ const Footer = () => {
                   onMouseEnter={(e) => (e.target.style.color = "#fff")}
                   onMouseLeave={(e) => (e.target.style.color = "#a1a1aa")}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -643,7 +363,8 @@ const Footer = () => {
           color: "#71717a",
         }}
       >
-        © {new Date().getFullYear()} ZENJI.SHOP — ALL RIGHTS RESERVED.
+        © {new Date().getFullYear()} ZENJI.SHOP | Saima Khan | — ALL RIGHTS
+        RESERVED.
       </div>
     </footer>
   );

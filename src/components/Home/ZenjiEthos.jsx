@@ -1,125 +1,13 @@
-// import React from "react";
-
-// const ZenjiEthos = () => {
-//   return (
-//     <section
-//       style={{
-//         position: "relative",
-//         width: "100%",
-//         minHeight: "70vh",
-//         display: "flex",
-//         alignItems: "center",
-//         overflow: "hidden",
-//         margin: "60px 0",
-//       }}
-//     >
-//       {/* Background Image featuring 3 Streetwear Models */}
-//       <div
-//         style={{
-//           position: "absolute",
-//           top: 0,
-//           left: 0,
-//           width: "100%",
-//           height: "100%",
-//           backgroundImage:
-//             "linear-gradient(90deg, rgba(9, 9, 11, 0.95) 0%, rgba(9, 9, 11, 0.7) 40%, rgba(9, 9, 11, 0.4) 100%), url('https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1920&auto=format&fit=crop')",
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           zIndex: 1,
-//         }}
-//       />
-
-//       {/* Content Container (Left Aligned Text) */}
-//       <div
-//         style={{
-//           position: "relative",
-//           zIndex: 10,
-//           maxWidth: "1400px",
-//           width: "100%",
-//           margin: "0 auto",
-//           padding: "0 40px",
-//         }}
-//       >
-//         <div style={{ maxWidth: "580px" }}>
-//           <p
-//             style={{
-//               color: "var(--color-primary)",
-//               fontSize: "0.85rem",
-//               fontWeight: "800",
-//               letterSpacing: "3px",
-//               textTransform: "uppercase",
-//               marginBottom: "12px",
-//             }}
-//           >
-//             // THE ZENJI ETHOS
-//           </p>
-
-//           <h3
-//             style={{
-//               fontSize: "clamp(2rem, 4vw, 3.2rem)",
-//               fontWeight: "900",
-//               textTransform: "uppercase",
-//               lineHeight: "1.1",
-//               letterSpacing: "0px",
-//               color: "#ffffff",
-//               marginBottom: "20px",
-//             }}
-//           >
-//             CULTURE WRITTEN IN{" "}
-//             <span style={{ color: "var(--color-primary)" }}>THREADS.</span>
-//           </h3>
-
-//           <p
-//             style={{
-//               color: "#a1a1aa",
-//               fontSize: "1rem",
-//               lineHeight: "1.7",
-//               marginBottom: "30px",
-//               fontWeight: "400",
-//             }}
-//           >
-//             ZENJI represents the intersection of underground anime aesthetics
-//             and premium dark streetwear. Built for those who walk their own
-//             path, every drop is crafted with heavyweight fabrics, modest cuts,
-//             and timeless Japanese narrative design.
-//           </p>
-
-//           <button
-//             style={{
-//               backgroundColor: "transparent",
-//               color: "#ffffff",
-//               border: "2px solid var(--color-primary)",
-//               padding: "14px 32px",
-//               fontWeight: "800",
-//               letterSpacing: "2px",
-//               fontSize: "0.85rem",
-//               textTransform: "uppercase",
-//               cursor: "pointer",
-//               transition: "all 0.3s ease",
-//             }}
-//             onMouseEnter={(e) => {
-//               e.target.style.backgroundColor = "var(--color-primary)";
-//               e.target.style.color = "#ffffff";
-//             }}
-//             onMouseLeave={(e) => {
-//               e.target.style.backgroundColor = "transparent";
-//               e.target.style.color = "#ffffff";
-//             }}
-//           >
-//             READ OUR STORY →
-//           </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ZenjiEthos;
-
 import React from "react";
 import zoneImg from "../../assets/zone.png";
 
 const ZenjiEthos = ({ onReadStory }) => {
+  const handleClick = () => {
+    if (onReadStory) {
+      onReadStory("OUR STORY");
+    }
+  };
+
   return (
     <section
       style={{
@@ -202,7 +90,7 @@ const ZenjiEthos = ({ onReadStory }) => {
           >
             CULTURE WRITTEN IN{" "}
             <span style={{ color: "var(--color-primary, #e63946)" }}>
-              THREADS.
+              THREAD.
             </span>
           </h3>
 
@@ -223,7 +111,7 @@ const ZenjiEthos = ({ onReadStory }) => {
           </p>
 
           <button
-            onClick={onReadStory}
+            onClick={handleClick}
             style={{
               backgroundColor: "transparent",
               color: "#ffffff",

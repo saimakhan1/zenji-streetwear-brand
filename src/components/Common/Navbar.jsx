@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Navbar = ({ onNavigate }) => {
+const Navbar = ({ onNavigate, currentPage = "HOME" }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownRef = useRef(null);
+
+  // পেজ নামগুলোকে uppercase এ কনভার্ট করে ম্যাচ নিশ্চিত করা
+  const activeKey = (currentPage || "HOME").toString().toUpperCase().trim();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -57,9 +60,13 @@ const Navbar = ({ onNavigate }) => {
       style={{
         width: "100%",
         padding: "18px 40px",
-        position: "relative",
+        position: "sticky", // Sticky positioning to stick at top on scroll
+        top: 0,
         zIndex: 9999,
         overflow: "visible",
+        backgroundColor: "rgba(9, 9, 11, 0.85)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
       <div
@@ -104,24 +111,33 @@ const Navbar = ({ onNavigate }) => {
           }}
         >
           {["HOME", "DROP", "COLLECTION", "LOOKBOOK", "OUR STORY"].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                onClick={(e) => handleLinkClick(e, item)}
-                className="nav-link"
-                style={{
-                  color: "#f4f4f5",
-                  textDecoration: "none",
-                  fontSize: "0.9rem",
-                  fontWeight: "700",
-                  letterSpacing: "1px",
-                  transition: "color 0.2s ease",
-                }}
-              >
-                {item}
-              </a>
-            ),
+            (item) => {
+              const isActive = activeKey === item;
+              return (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={(e) => handleLinkClick(e, item)}
+                  className="nav-link"
+                  style={{
+                    color: isActive
+                      ? "var(--color-primary, #e63946)"
+                      : "#f4f4f5",
+                    textDecoration: "none",
+                    fontSize: "0.9rem",
+                    fontWeight: "700",
+                    letterSpacing: "1px",
+                    transition: "all 0.2s ease",
+                    paddingBottom: "4px",
+                    borderBottom: isActive
+                      ? "2px solid var(--color-primary, #e63946)"
+                      : "2px solid transparent",
+                  }}
+                >
+                  {item}
+                </a>
+              );
+            },
           )}
 
           {/* Dropdown Menu */}
@@ -142,9 +158,11 @@ const Navbar = ({ onNavigate }) => {
                 outline: "none",
                 padding: 0,
                 cursor: "pointer",
-                color: dropdownOpen
-                  ? "var(--color-primary, #e63946)"
-                  : "#f4f4f5",
+                color:
+                  dropdownOpen ||
+                  ["COLLABORATION", "REVIEW", "FAQ"].includes(activeKey)
+                    ? "var(--color-primary, #e63946)"
+                    : "#f4f4f5",
                 fontSize: "0.9rem",
                 fontWeight: "700",
                 letterSpacing: "1px",
@@ -184,25 +202,33 @@ const Navbar = ({ onNavigate }) => {
                   zIndex: 10000,
                 }}
               >
-                {["COLLABORATION", "REVIEW", "FAQ"].map((subItem) => (
-                  <a
-                    key={subItem}
-                    href={`#${subItem.toLowerCase()}`}
-                    onClick={(e) => handleLinkClick(e, subItem)}
-                    className="dropdown-link"
-                    style={{
-                      padding: "10px 20px",
-                      color: "#a1a1aa",
-                      textDecoration: "none",
-                      fontSize: "0.85rem",
-                      fontWeight: "600",
-                      transition: "all 0.2s ease",
-                      display: "block",
-                    }}
-                  >
-                    {subItem}
-                  </a>
-                ))}
+                {["COLLABORATION", "REVIEW", "FAQ"].map((subItem) => {
+                  const isSubActive = activeKey === subItem;
+                  return (
+                    <a
+                      key={subItem}
+                      href={`#${subItem.toLowerCase()}`}
+                      onClick={(e) => handleLinkClick(e, subItem)}
+                      className="dropdown-link"
+                      style={{
+                        padding: "10px 20px",
+                        color: isSubActive
+                          ? "var(--color-primary, #e63946)"
+                          : "#a1a1aa",
+                        textDecoration: "none",
+                        fontSize: "0.85rem",
+                        fontWeight: "600",
+                        transition: "all 0.2s ease",
+                        display: "block",
+                        backgroundColor: isSubActive
+                          ? "rgba(230, 57, 70, 0.1)"
+                          : "transparent",
+                      }}
+                    >
+                      {subItem}
+                    </a>
+                  );
+                })}
               </div>
             )}
           </div>
@@ -233,7 +259,10 @@ const Navbar = ({ onNavigate }) => {
             style={{
               background: "none",
               border: "none",
-              color: "#fff",
+              color:
+                activeKey === "WISHLIST"
+                  ? "var(--color-primary, #e63946)"
+                  : "#fff",
               cursor: "pointer",
               fontSize: "1.2rem",
             }}
@@ -251,7 +280,8 @@ const Navbar = ({ onNavigate }) => {
             style={{
               background: "none",
               border: "none",
-              color: "#fff",
+              color:
+                activeKey === "CART" ? "var(--color-primary, #e63946)" : "#fff",
               cursor: "pointer",
               fontSize: "1.2rem",
             }}
@@ -265,7 +295,10 @@ const Navbar = ({ onNavigate }) => {
             style={{
               background: "none",
               border: "none",
-              color: "#fff",
+              color:
+                activeKey === "LOGIN"
+                  ? "var(--color-primary, #e63946)"
+                  : "#fff",
               cursor: "pointer",
               fontSize: "1.2rem",
             }}
