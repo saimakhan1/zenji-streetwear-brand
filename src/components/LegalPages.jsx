@@ -4,7 +4,7 @@ const pageContents = {
   SHIPPING_POLICY: {
     title: "SHIPPING POLICY",
     content:
-      "We deliver across Bangladesh within 3-5 business days. Standard shipping fee applies at checkout.",
+      "We deliver across Australia within 3-5 business days. Standard shipping fee applies at checkout.",
   },
   RETURNS: {
     title: "RETURNS & EXCHANGES",
